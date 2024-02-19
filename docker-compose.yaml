@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  omma-tool-api:
+    build: .
+    container_name: omma-tool-api
+    ports:
+      - 8000:8000
+    env_file:
+      - .env
+    environment:
+      - TZ=Europe/Frankfurt
+    volumes:
+      - ./data:/code/data
+      - ./scripts/init-scripts:/code/scripts/init-scripts
+    entrypoint: ["/code/scripts/init-scripts/init_alembic.sh"]
+    command: hypercorn backend.main:app --bind 0.0.0.0:8000 --workers ${PLATFORM_API_WORKERS:-1} --log-level info
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h neural-api-postgres -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  fugu-data:
