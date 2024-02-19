@@ -33,13 +33,14 @@ app.add_middleware(
     SessionMiddleware, secret_key=config.SECRET_KEY, max_age=3600  # 1 hour
 )
 
-# include routers
+# Include routers
 app.include_router(api_router, prefix=API_V1_STR)
 
-# serve static files from the 'static' directory
+# Serve static files from the 'static' directory
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-# custom favicon
+
+# Custom favicon
 @app.get("/docs", include_in_schema=False)
 async def custom_swagger_ui_html() -> HTMLResponse:
     return get_swagger_ui_html(
