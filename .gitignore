@@ -147,6 +147,7 @@ __pycache__
 *.pyc
 *.pyo
 *.pyd
+.DS_Store
 
 # Data
 data/postgres_storage
