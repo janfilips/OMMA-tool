@@ -10,6 +10,7 @@ python = "^3.11"
 hypercorn = "^0.16.0"
 fastapi = "^0.109.2"
 sqlalchemy = "^2.0.27"
+uvicorn = "^0.27.1"
 
 [build-system]
 requires = ["poetry-core"]
