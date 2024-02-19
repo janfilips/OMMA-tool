@@ -48,6 +48,22 @@ poetry run uvicorn backend.main:app --port 8000 --log-level info --reload
 Visit http://localhost:8000 in your browser and you're up and running!
 
 
+## Tests
+
+To run tests, simply run pytest.
+
+```
+OMMA-tool % pytest
+==================================== test session starts ====================================
+platform darwin -- Python 3.11.0, pytest-8.0.1, pluggy-1.4.0
+rootdir: /Users/margaretka/code/OMMA-tool
+plugins: anyio-4.3.0
+collected 1 item                                                                            
+tests/test_api.py .                                                                   [100%]
+===================================== 1 passed in 1.80s =====================================
+```
+
+
 ## Docker
 
 Prefer to keep things neat with Docker? We've got you covered. Spin up the project with a few simple commands:
