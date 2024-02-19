@@ -58,7 +58,7 @@ OMMA-tool % pytest
 platform darwin -- Python 3.11.0, pytest-8.0.1, pluggy-1.4.0
 rootdir: /Users/margaretka/code/OMMA-tool
 plugins: anyio-4.3.0
-collected 1 item                                                                            
+collected 1 item
 tests/test_api.py .                                                                   [100%]
 ===================================== 1 passed in 1.80s =====================================
 ```
