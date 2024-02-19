@@ -8,7 +8,7 @@ DEVELOPMENT = os.getenv("DEVELOPMENT", None)
 STAGING = os.getenv("STAGING", None)
 PRODUCTION = os.getenv("PRODUCTION", None)
 
-SECRET_KEY = os.getenv("SECRET_KEY", "h21k3jhk12h3k1hk23hkjqhkdhaskhdksahdiuyi2y7fydweifusehfksdhfkjh")
+SECRET_KEY = os.getenv("SECRET_KEY", "this-is-not-a-secret-key-make-it-secret")
 
 origins_str = os.getenv("CORS_ORIGINS", "")
 if origins_str:
