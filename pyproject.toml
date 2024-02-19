@@ -7,6 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+hypercorn = "^0.16.0"
 
 [build-system]
 requires = ["poetry-core"]
