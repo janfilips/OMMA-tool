@@ -35,7 +35,7 @@ services:
     volumes:
       - ./data:/code/data
       - ./scripts/init-scripts:/code/scripts/init-scripts
-    entrypoint: ["/code/scripts/init-scripts/init_alembic.sh"]
+    entrypoint: ["/code/scripts/init-scripts/init-alembic.sh"]
     command: hypercorn backend.main:app --bind 0.0.0.0:8000 --workers ${PLATFORM_API_WORKERS:-1} --log-level info
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -h neural-api-postgres -U postgres"]
