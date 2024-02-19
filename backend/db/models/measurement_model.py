@@ -10,6 +10,7 @@ Base = declarative_base()
 
 class Measurement(Base):
     __tablename__ = 'measurement'
+    
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
     date = Column(DateTime, default=datetime.utcnow)
