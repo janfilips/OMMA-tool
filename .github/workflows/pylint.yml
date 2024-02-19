@@ -1,23 +1,43 @@
-name: Pylint
+name: Build and Lint
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.11"]
+  linter:
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
+
+    - name: Set up Python
+      run: echo "PATH=/usr/bin:$PATH" >> $GITHUB_ENV
+
+    - name: Update and Install python3-full
+      continue-on-error: true
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y python3-full
+
+    - name: Create Virtual Environment
+      run: python3.11 -m venv .venv
+
+    - name: Activate Virtual Environment
+      run: echo ".venv/bin" >> $GITHUB_PATH
+
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install pylint
-    - name: Analysing the code with pylint
+        python3.11 -m pip install --upgrade pip
+        pip install pre-commit
+
+    - name: Find pre-commit
       run: |
-        pylint $(git ls-files '*.py')
+        echo "Pre-commit location: $(which pre-commit)"
+
+    - name: Run linter
+      run: |
+        pre-commit install
+        pre-commit run --all-files
