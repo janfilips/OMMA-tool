@@ -14,7 +14,7 @@ API_V1_STR = "/api/v1"
 logging.basicConfig(level=logging.INFO)
 
 app = FastAPI(
-    title="OMMA-Tool API",
+    title="OMMA-tool API",
     openapi_url=f"{API_V1_STR}/openapi.json",
     docs_url=None
 )
