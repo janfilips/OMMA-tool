@@ -1,10 +1,8 @@
 import logging
 from typing import Dict
 
-from backend.core.auth import get_current_user
-from backend.db.schemas.user_schema import UserSchema
 from backend.utils.logging_utils import log_endpoint
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter
 
 logger = logging.getLogger(__name__)
 
