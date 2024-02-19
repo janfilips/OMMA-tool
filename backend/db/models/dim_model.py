@@ -1,11 +1,9 @@
-from datetime import datetime
-
-from sqlalchemy import (Column, DateTime, Float, ForeignKey, Integer, String,
-                        UniqueConstraint)
+from sqlalchemy import Column, Float, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import backref, relationship
+from sqlalchemy.orm import relationship
 
 Base = declarative_base()
+
 
 class Dim(Base):
     __tablename__ = 'dim'
