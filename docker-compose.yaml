@@ -43,5 +43,8 @@ services:
       timeout: 5s
       retries: 5
 
+  # XXX TODO nginx configuration
+  # XXX TODO nginx ssl certificate configuration
+
 volumes:
   omma-data:
