@@ -6,6 +6,7 @@ from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
+
 class Measurement(Base):
     __tablename__ = 'measurement'
 
