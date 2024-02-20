@@ -71,7 +71,7 @@ Prefer to keep things neat with Docker? We've got you covered. Spin up the proje
 Build the Container and start them in the background:
 
 ```
-docker compose build
+docker compose build --no-cache
 docker compose up -d
 docker compose logs -f
 ```
