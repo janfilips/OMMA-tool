@@ -33,7 +33,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN pip install "poetry==$POETRY_VERSION"
 
 # Setup Timezone
-RUN ln -sf /usr/share/zoneinfo/Europe/Burgas /etc/localtime && \
+RUN ln -sf /usr/share/zoneinfo/Europe/Vienna /etc/localtime && \
     echo "Europe/Vienna" > /etc/timezone
 
 # Install psycopg2-binary directly
