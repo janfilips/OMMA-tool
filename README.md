@@ -27,9 +27,17 @@ cp .env.devel .env
 
 3. Load the environment variables:
 
+For the unix-like OS (linux, MacOS):
+
 ```
 export $(grep -v '^#' .env | xargs)
 ```
+
+In Windows environment run the venv.bat script:
+```
+scripts/venv.bat
+```
+
 
 4. Dependency Installation
 
