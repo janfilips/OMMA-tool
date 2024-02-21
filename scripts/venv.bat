@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
-for /f "tokens=* usebackq" %%a in (`.env.local`) do (
+for /f "tokens=* delims=" %%a in (.env.local) do (
     set "line=%%a"
     if not "!line:~0,1!"=="#" (
         for /f "tokens=1* delims==" %%b in ("!line!") do (
