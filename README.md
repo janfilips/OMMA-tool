@@ -75,3 +75,9 @@ docker compose build --no-cache
 docker compose up -d
 docker compose logs -f
 ```
+
+
+## Production Checklist
+
+[ ] triple-check .env
+[ ] XXX TODO...
