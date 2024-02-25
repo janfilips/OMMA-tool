@@ -87,5 +87,5 @@ docker compose logs -f
 
 ## Production Checklist
 
-[ ] triple-check .env
-[ ] XXX TODO...
+1. triple-check .env settings
+2. TBD
